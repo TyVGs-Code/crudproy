@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; /* Color de fondo más claro */
+    color: #343a40;
+}
+
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    min-height: 100vh;
+    transition: all 0.4s ease; /* Transición más suave */
+    background-color: #343a40; /* Color de fondo del sidebar */
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    position: relative; /* Para la flecha de conexión */
+}
+
+.sidebar-heading {
+    padding: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Degradado en el encabezado */
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0;
+    padding: 15px 20px;
+    transition: background-color 0.3s, transform 0.3s; /* Añadido efecto de transformación */
+}
+
+.list-group-item i {
+    margin-right: 10px;
+    color: #007bff; /* Color del icono */
+}
+
+.list-group-item:hover {
+    background-color: #495057;
+    transform: translateX(10px); /* Efecto de desplazamiento al hacer hover */
+    cursor: pointer;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+    transition: margin 0.4s ease; /* Suave transición al abrir/cerrar sidebar */
+}
+
+.table {
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para la tabla */
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.btn-warning, .btn-danger {
+    margin-right: 5px;
+}
+
+/* Flecha que conecta el botón de hamburguesa al sidebar */
+#arrow-toggle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #007bff; /* Color del botón */
+    position: absolute;
+    left: 45px;
+    top: 15px;
+    transition: all 0.4s ease;
+}
+
+/* Al alternar el sidebar, mueve la flecha */
+#wrapper.toggled #arrow-toggle {
+    border-bottom-color: #343a40; /* Cambia el color al cerrar el sidebar */
+}
+
+/* Estilo para el sidebar */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px; /* Mueve el sidebar fuera de la vista */
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 0; /* Ajusta el contenido principal */
+}
+
+/* Estilo para el botón de menú */
+#menu-toggle {
+    background-color: #007bff; /* Color del botón */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+#menu-toggle:hover {
+    background-color: #0056b3; /* Color más oscuro en hover */
+}
+
+/* Estilo para la navegación */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para la navbar */
+}
+
+.nav-link {
+    color: #007bff; /* Color del texto */
+    font-weight: bold; /* Negrita */
+}
+
+.nav-link:hover {
+    color: #0056b3; /* Color del texto en hover */
+}
+
